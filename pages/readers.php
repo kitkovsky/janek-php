@@ -14,6 +14,10 @@
       echo "<p style='color: green;'>Nowy czytelnik dodany poprawnie.</p>";
   }
 
+  if (isset($_GET['deleted']) && $_GET['deleted'] == 1) {
+      echo "<p style='color: green;'>Czytelnik usuniety poprawnie.</p>";
+  }
+
   echo("<h2>Czytelnicy</h2>");
 
   $sql = "SELECT * FROM czytelnicy";
@@ -21,7 +25,11 @@
 
   if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
-        echo $row["id"] . " | " . $row["imie"] . " " . $row["nazwisko"] . " | " . $row["mail"] . " | " . $row["numer_tel"] . " | " . $row["adres"] . "<br>";
+        echo $row["id"] . " | " . $row["imie"] . " " . $row["nazwisko"] . " | " . $row["mail"] . " | " . $row["numer_tel"] . " | " . $row["adres"];
+        echo " <form style='display:inline;' action='../api/delete-reader.php' method='post'>
+                  <input type='hidden' name='id' value='" . $row["id"] . "'>
+                  <button type='submit'>x</button>
+               </form><br>";
       }
   } else {
       echo "brak czytelnikow";
