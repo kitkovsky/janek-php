@@ -1,3 +1,7 @@
+body {
+  background-color: #bbb;
+}
+
 .header {
   display: flex;
 
