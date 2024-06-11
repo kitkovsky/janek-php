@@ -18,6 +18,10 @@
       echo "<p style='color: green;'>Czytelnik usuniety poprawnie.</p>";
   }
 
+  if (isset($_GET['edited']) && $_GET['edited'] == 1) {
+      echo "<p style='color: green;'>Dane czytelnika zostaly zaktualizowane.</p>";
+  }
+
   echo("<h2>Czytelnicy</h2>");
 
   $sql = "SELECT * FROM czytelnicy";
@@ -29,6 +33,10 @@
         echo " <form style='display:inline;' action='../api/delete-reader.php' method='post'>
                   <input type='hidden' name='id' value='" . $row["id"] . "'>
                   <button type='submit'>x</button>
+               </form>";
+        echo " <form style='display:inline;' action='../pages/edit-reader.php' method='get'>
+                  <input type='hidden' name='id' value='" . $row["id"] . "'>
+                  <button type='submit'>Edytuj</button>
                </form><br>";
       }
   } else {
