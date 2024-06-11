@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+
+  .logo {
+    margin-right: 4rem;
+  }
+}
+
+.header-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
