@@ -8,6 +8,7 @@
     </div>
     <div class="header-links">
       <a href='../pages/readers.php'>czytelnicy</a>
+      <a href='../pages/rentals.php'>wypozyczenia</a>
     </div>
   </div>
   <hr />

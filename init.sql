@@ -40,8 +40,8 @@ CREATE TABLE dziela (
 
 CREATE TABLE wypozyczenia (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  czytelnik_id INT NOT NULL UNIQUE,
-  dzielo_id INT NOT NULL UNIQUE,
+  czytelnik_id INT NOT NULL,
+  dzielo_id INT NOT NULL,
   data_wypozyczenia DATE NOT NULL,
   data_zwrotu DATE,
   FOREIGN KEY (czytelnik_id) REFERENCES czytelnicy(id) ON DELETE CASCADE ON UPDATE CASCADE,
